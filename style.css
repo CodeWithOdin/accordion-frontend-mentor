@@ -83,17 +83,31 @@
 }
 .header__accordion>h1{
    font-weight: var(--fw-bold);
-   font-size: var(--fs-250);
+   font-size: var(--fs-200);
+}
+.header__accordion>img{
+    width: var(--fs-150);
 }
 
 .header__accordion[data-item="header__accordion"]{
     justify-content: start;
-    gap: 0.5rem;
+    gap: 1rem;
 }
-.header__panel>p{
+.header__panel>button{
+    background: transparent;
+    border-style: none;
     font-weight: var(--fw-medium);
     font-family: "Work-Sans",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--fs-100);
     cursor: pointer;
+}
+
+button:focus-visible {
+    outline: medium solid hsl(var(--clr-gray-purple),0.8);
+    background-color: var(--clr-light-pink-hsl);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 .content__panel>div>p{
     font-weight: var(--fw-regular);
@@ -114,7 +128,8 @@
 .header__panel[aria-expanded="true"]>img{
     content:url(./assets/images/icon-minus.svg)
 }
-.header__panel>p:hover{
+
+button:hover{
     color: hsl(292, 89%, 40%);
 }
 
