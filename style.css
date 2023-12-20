@@ -1,0 +1,126 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Work-Sans","system-ui";
+    font-display: swap;
+    font-weight: 100 900;
+    src: url("assets/fonts/WorkSans-VariableFont_wght.ttf"), format("turetype")
+}
+@font-face {
+    font-family: "Work-Sans-italic";
+    font-display: swap;
+    font-weight: 100;
+    src: url("assets/fonts/WorkSans-Italic-VariableFont_wght.ttf"), format("turetype")
+}
+:root{
+    --clr-white:0, 0%, 100%;
+    --clr-light-pink:275, 100%, 97%;
+    --clr-gray-purple: 292, 42%, 14%;
+
+    --clr-white-hsl:hsl(var(--clr-white));
+    --clr-light-pink-hsl: hsl(var(--clr-light-pink));
+    --clr-gray-purple-hsl: hsl(var(--clr-gray-purple));
+
+    --font-family-latin:"Work-Sans";
+    --font-family-italic:"Work-Sans-italic";
+
+    --fw-regular:400;
+    --fw-medium:600;
+    --fw-bold:700;
+
+    --fs-100:1rem;
+    --fs-125:1.25rem;
+    --fs-150:1.5rem;
+    --fs-200:2rem;
+    --fs-250:2.5rem;
+    --fs-300:3rem;
+    --fs-350:3.5rem;
+    --fs-400:4rem;
+    --fs-450:4.5rem;
+    --fs-500:5rem;
+    --fs-550:5.5rem;
+    --fs-600:6rem;
+    --fs-650:6.5rem;
+
+}
+
+.grid-flow{
+    display: grid;
+    gap: 1rem;
+}
+.flex-flow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper{
+    background-color:var(--clr-light-pink-hsl);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: "Work-Sans",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.accordion{
+    max-width:500px;
+    margin: 0 1.5rem 0 1.5rem ;
+    background-color: var(--clr-white-hsl);
+    --padding-gap:1.5rem;
+    padding: calc(var(--padding-gap)*1.5) calc(var(--padding-gap)*1.2);
+    border-radius: 10px;
+    box-shadow: 3px 6px 28px 1px hsl(var(--clr-gray-purple),.2);
+}
+.header__accordion>h1{
+   font-weight: var(--fw-bold);
+   text-transform: uppercase;
+   font-size: var(--fs-250);
+}
+.header__accordion[data-item="header__accordion"]{
+    justify-content: start;
+    gap: 0.5rem;
+}
+.header__panel>p{
+    font-weight: var(--fw-medium);
+    font-family: "Work-Sans",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+.content__panel>div>p{
+    font-weight: var(--fw-regular);
+    color: hsl(var(--clr-gray-purple),.5);
+}
+
+.content__panel{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s;
+}
+.content__panel>div{
+    overflow:hidden;
+}
+.content__panel[aria-hidden="false"]{
+    grid-template-rows: 1fr;
+}
+.header__panel[aria-expanded="true"]>img{
+    content:url(./assets/images/icon-minus.svg)
+}
+.header__panel>p:hover{
+    color: hsl(292, 89%, 40%);
+}
+
+@media only screen and (max-width:375px) {
+    .wrapper{
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
