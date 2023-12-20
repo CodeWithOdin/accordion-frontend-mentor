@@ -85,9 +85,6 @@
    font-weight: var(--fw-bold);
    font-size: var(--fs-250);
 }
-.header__accordion>h1>span{
-    text-transform: uppercase;
-}
 
 .header__accordion[data-item="header__accordion"]{
     justify-content: start;
